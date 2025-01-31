@@ -27,11 +27,6 @@ run_all:
 run_node:
 	node ./node/index.js
 
-.PHONY: run_php
-run_php:
-	composer install --working-dir=php
-	php -S localhost:8000 -t public
-
 .PHONY: run_frontend
 run_frontend:
 	npm start --prefix ./frontend
