@@ -69,7 +69,10 @@ app.use(
     })
 )
 app.use(jsonParser)
-app.use(cors())
+app.use(cors({
+    origin: ['https://www.ocrolusexample.com', 'http://localhost:8000'],
+    credentials: true
+}));
 
 // This is an example proxy for a query that an implementing server would need to do
 // in order to get the desired external_id value to be sent to Ocrolus. For example
