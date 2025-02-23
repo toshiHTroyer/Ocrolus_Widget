@@ -14,29 +14,32 @@
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
     <script id="ocrolus-initializer-script">
-    (function (w, d, s, o, h, u, f, js, fjs) {
-        w[o] = w[o] || function () {
-            (w[o].q = w[o].q || []).push(arguments);
-        };
-        (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
-        js.id = o;
-        js.dataset.host = h;
-        js.dataset.uuid = u;
-        js.src = f;
-        js.async = 1;
-        fjs.parentNode.insertBefore(js, fjs);
-    })(
-        window,
-        document,
-        'script',
-        'ocrolus_script',
-        'https://widget.ocrolus.com',
-        '08328375-81ef-48d5-b2cb-c38e87e55231',
-        'https://widget.ocrolus.com/static/initializer-sdk.bundle.js'
-    );
-    ocrolus_script('init');
-    </script>
+        (function (w, d, s, o, h, u, f, js, fjs) {
+            w[o] = w[o] || function () {
+                (w[o].q = w[o].q || []).push(arguments);
+            };
+            (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+            js.id = o;
+            js.dataset.host = h;
+            js.dataset.uuid = u;
+            js.src = f;
+            js.async = 1;
+            //js.integrity = integrity;
+            //js.crossOrigin = "anonymous";
+            fjs.parentNode.insertBefore(js, fjs);
+            //w[o]('init', );
+            w[o]('init');
+        })(
+            window,
+            document,
+            'script',
+            'ocrolus_script',
+            'https://widget.ocrolus.com',
+            '08328375-81ef-48d5-b2cb-c38e87e55231',
+            "https://widget.ocrolus.com/static/initializer-sdk.bundle.js"
+        );
+        //ocrolus_script('init');
+        </script>
 </body>
 </html>

@@ -16,10 +16,10 @@ function App() {
     const [userKey, setUserKey] = useState('default-user')
     const [bookName, setBookName] = useState('Widget Book')
 
-    // Set up getAuthToken immediately
     useEffect(() => {
         window.getAuthToken = async function() {
             const response = await fetch("http://localhost:8000/token", {
+            //const response = await fetch("https://auth.ocrolusexample.com/token", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -29,16 +29,17 @@ function App() {
                     bookName: bookName
                 })
             });
-
+            //const data = await response.json();
             const json = await response.json();
-            return json.access_token;
+            //return json.access_token;
+            //return json.access_token;
+            return json.accessToken; //widget doesnt load properly
         };
 
         return () => {
             delete window.getAuthToken;
         };
     }, [userKey, bookName]);
-
     const handleRefreshToken = async () => {
         try {
             if (window.getAuthToken) {
