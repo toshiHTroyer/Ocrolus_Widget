@@ -33,11 +33,7 @@ function App() {
             const json = await response.json();
             //return json.access_token;
             //return json.access_token;
-            return json.accessToken; //widget doesnt load properly
-        };
-
-        return () => {
-            delete window.getAuthToken;
+            return json.accessToken;
         };
     }, [userKey, bookName]);
     const handleRefreshToken = async () => {
